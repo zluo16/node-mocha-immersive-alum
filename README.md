@@ -15,28 +15,35 @@ How do you test applications in Node to avoid breaking existing functionality? Y
 
 ## Installing Mocha and Chai Expect
 
+Note: In the labs, all you need to do is to run `npm install` because we did all the setup work for you. Read the rest of this section only if you are starting from scratch. Otherwise, skip to Writing Mocha Tests to understand how Mocha and Chai work. And if all you want to know is how to run the tests for your lab, then you can skip this entire lessons, because all you need for the labs is to run these two commands:
+
+```
+npm install
+npm test
+```
+
 First, we need to install Mocha and Chai. To do so, you'll need to open your terminal and create either the `node_modules` folder or the `package.json` file:
 
 ```
-$ mkdir node_modules
+mkdir node_modules
 ```
 
 ```
-$ npm init
+npm init
 ```
 
-Then, you can use the `npm install NAME` to install Mocha and Chai Expect. We'll cover npm and modules later in more details.
+Then, you can use the `npm install NAME` to install Mocha and Chai Expect. We'll cover npm and modules later in more details. For now all you need to know is the modules are akin to browser JavaScript libraries or [Ruby gems](https://rubygems.org).
 
 ```
-$ npm install mocha@2.4.5 --save-dev
-$ npm install chai@3.5.0 --save-dev
+npm install mocha@2.4.5 --save-dev
+npm install chai@3.5.0 --save-dev
 ```
 
-That's it. In your `node_modules` you should see two new folders: `mocha` and `chai`, if you run `$ ls node_modules` to get the list of directories.
+That's it. In your `node_modules` you should see two new folders: `mocha` and `chai`, if you run ` ls node_modules` to get the list of directories.
 
 Note: Chai comes with Expect so by installing Chai we are getting Chai Expect.
 
-## Writing Mocha Test
+## Writing Mocha Tests
 
 Expect has a lot of features and if you're familiar with behavioral-driven development (like from Rspec and Jasmine), you can learn Expect fast. We won't be covering all of the features in the lesson, only the most important ones which you'll encounter in the labs of this course.
 
@@ -53,13 +60,13 @@ var name = 'React Quickly'
 var url = ['http://reactquickly.co', 'https://www.manning.com/books/react-quickly']
 ```
 
-Next, we use `describe` with a string and function arguments to define the test suite:
+Next, we use `describe` with a string and function arguments to define the test suite. The first argument is a string of the object that we are testing. (object in a broad sense, it can be a module or a function). Typically it's a noun:
 
 ```js
 describe('name and url', function() {
 ```
 
-The next method is `it()`, think about it as the test case:
+The next method is `it()`, think about it as the test case. The first argument is the behavior, i.e., a plain english description of the expected behavior of the code we're testing:
 
 ```js
   it('must be a string', function(done){
@@ -71,6 +78,8 @@ We invoke `expect()` with the object which we want to test like `name` or `url`.
     expect(name).to.be.a('string')
     expect(name).to.equal('React Quickly')
 ```
+
+`expect` actually calls your functions and tests your variables by using a matcher like `to.be.a`. Then `expect` compares the actual value (`name`) to the value expected value (`string`) passed to the matcher.
 
 The `to.have` checks for properties with `length` being a property of an array:
 
@@ -119,7 +128,7 @@ There are two ways to run Mocha tests: local and global. We'll cover the local b
 
 
 ```
-$ node_modules/mocha/bin/mocha test.js
+node_modules/mocha/bin/mocha test.js
 ```
 
 You should see this output which mean that test was run successfully:
@@ -140,11 +149,11 @@ The idea behind this command `$ node_modules/mocha/bin/mocha test.js` is to poin
   },
 ```  
 
-This will enable us to use `npm test` to test with local Mocha the `test.js` file. This is how all future labs in this course will test your solutions. Just remember, run `$ npm install` so that each lab can download their own local versions of Mocha and Chai. If this is confusing, stay calm. We'll cover modules, npm and `package.json` later. For now to run the labs, just remember to run these two commands:
+This will enable us to use `npm test` to test with local Mocha the `test.js` file. This is how all future labs in this course will test your solutions. Just remember, run `npm install` so that each lab can download their own local versions of Mocha and Chai. If this is confusing, stay calm. We'll cover modules, npm and `package.json` later. For now to run the labs, just remember to run these two commands:
 
 ```
-$ npm install
-$ npm test
+npm install
+npm test
 ```
 
 And the tests in the lab will verify your solution.
