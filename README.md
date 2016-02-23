@@ -66,7 +66,7 @@ Next, we use `describe` with a string and function arguments to define the test 
 describe('name and url', function() {
 ```
 
-The next method is `it()`, think about it as the test case. The first argument is the behavior, i.e., a plain english description of the expected behavior of the code we're testing:
+The next method is `it()`, think about it as the test case. The first argument is the behavior, i.e., a plain English description of the expected behavior of the code we're testing:
 
 ```js
   it('must be a string', function(done){
@@ -102,7 +102,7 @@ It's important to define the `done` argument in the callback, because that's how
 })
 ```
 
-So the whole `test.js` must look like this. Compare agains your file:
+So the whole `test.js` must look like this. Compare against your file:
 
 ```js
 var expect = require('chai').expect
@@ -141,7 +141,7 @@ You should see this output which mean that test was run successfully:
   1 passing (11ms)
 ```
 
-The idea behind this command `$ node_modules/mocha/bin/mocha test.js` is to point to your local version of Mocha. Now open `package.json` in your editor. If you don't have it, then create it. Find a line with `scripts` and edit the value of `test`:
+The idea behind this command `node_modules/mocha/bin/mocha test.js` is to point to your local version of Mocha. Now open `package.json` in your editor. If you don't have it, then create it. Find a line with `scripts` and edit the value of `test`:
 
 ```
   "scripts": {
