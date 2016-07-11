@@ -79,7 +79,7 @@ We invoke `expect()` with the object which we want to test like `name` or `url`.
     expect(name).to.equal('React Quickly')
 ```
 
-`expect` actually calls your functions and tests your variables by using a matcher like `to.be.a`. Then `expect` compares the actual value (`name`) to the value expected value (`string`) passed to the matcher.
+`expect` actually calls your functions and tests your variables by using a matcher like `to.be.a`. Then `expect` compares the actual value (`name`) to the expected value (`string`) passed to the matcher.
 
 The `to.have` checks for properties with `length` being a property of an array:
 
@@ -169,3 +169,5 @@ And the tests in the lab will verify your solution.
 ---
 
 <a href='https://learn.co/lessons/node-mocha' data-visibility='hidden'>View this lesson on Learn.co</a>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/node-mocha'>Mocha Testing Framework</a> on Learn.co and start learning to code for free.</p>
