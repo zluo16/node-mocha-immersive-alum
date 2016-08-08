@@ -131,7 +131,7 @@ There are two ways to run Mocha tests: local and global. We'll cover the local b
 node_modules/mocha/bin/mocha test.js
 ```
 
-You should see this output which mean that test was run successfully:
+You should see this output which means that the test was run successfully:
 
 ```
   name and url
